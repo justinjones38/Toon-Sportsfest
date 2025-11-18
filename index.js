@@ -1,3 +1,19 @@
+// Use hamburger menu for responsive design
+// Get hamburger button and list items
+let hamburgerMenu = document.getElementById("hamburger-menu");
+let listItems = document.querySelector(".navbar ul");
+
+//  Show list items
+const showList = () => {
+  if (listItems.style.display === "none") {
+    listItems.style.display = "flex"
+  }
+}
+
+hamburgerMenu.addEventListener("click", showList);
+
+
+
 /*** Dark Mode ***
   
   Purpose:
@@ -20,9 +36,9 @@ const toggleDarkMode = () => {
     document.body.classList.toggle("dark-mode");
     lightMode = !lightMode;
     if (lightMode) {
-      buttonSymbol.src = `./img/dark_mode.png`;
-    } else {
       buttonSymbol.src = `./img/light_mode.png`;
+    } else {
+      buttonSymbol.src = `./img/dark_mode.png`;
     }
 
 
@@ -104,11 +120,11 @@ featuredEvents.addEventListener("click", handlePrimaryEvent);
   const addEventsToDoc = () => {
     if (extraEvents.style.display == "" || extraEvents.style.display == "none") {
       extraEvents.style.display = "grid";
-      viewButton.textContent = "Hide Events";
+      viewButton.textContent = "Show Less";
       console.log("Input logged");
     } else {
       extraEvents.style.display = "none";
-      viewButton.textContent = "View More";
+      viewButton.textContent = "Show More";
     }
   }
 
@@ -119,15 +135,14 @@ featuredEvents.addEventListener("click", handlePrimaryEvent);
 // Step 1: Add your query for the submit RSVP button here
 let button = document.getElementById("rsvp-button");
 let count = 3;
-const addParticipant = (event) => {
-    event.preventDefault();
+const addParticipant = () => {
     // Step 2: Write your code to manipulate the DOM here
     let name = document.getElementById("name").value;
     let state = document.getElementById("state").value;
     let email = document.getElementById("email").value;
 
     const p = document.createElement("p");
-    p.textContent = `${name} from ${state} has RSVP'd`;
+    p.textContent = `🎟️ ${name} from ${state} has RSVP'd`;
     let rsvpParticipants = document.getElementsByClassName("rsvp-participants")[0];
     rsvpParticipants.appendChild(p);
 
@@ -152,7 +167,63 @@ const addParticipant = (event) => {
 }
 
 // Step 3: Add a click event listener to the submit RSVP button here
-button.addEventListener("click", addParticipant);
-/*** Form Validation [PLACEHOLDER] [ADDED IN UNIT 7] ***/
+
+/*** Form Validation ***
+  
+  Purpose:
+  - Prevents invalid form submissions from being added to the list of participants.
+
+  When To Modify:
+  - [ ] Project 7 (REQUIRED FEATURE)
+  - [ ] Project 7 (STRETCH FEATURE)
+  - [ ] Project 9 (REQUIRED FEATURE)
+  - [ ] Any time between / after
+***/
+
+// Step 1: We actually don't need to select the form button again -- we already did it in the RSVP code above.
+
+// Step 2: Write the callback function
+const validateForm = () => {
+
+  let containsErrors = false;
+
+  var rsvpInputs = document.getElementById("rsvp-form").elements;
+  // TODO: Loop through all inputs
+  for(let i = 0; i < rsvpInputs.length; i++) {
+    // TODO: Inside loop, validate the value of each input
+
+    if (rsvpInputs[i].value.length < 2) {
+      containsErrors = true;
+      rsvpInputs[i].classList.add("error");
+      console.log("clicked")
+    } else {
+      rsvpInputs[i].classList.remove("error");
+      console.log("clicked remove error")
+    }
+  }
+
+    let email = document.getElementById("email");
+      if(!email.value.includes("@")) {
+        containsErrors = true;
+        email.classList.add("error");
+        console.log("This email does not include @");
+    } else {
+      email.classList.remove("error")
+    }
+
+  // TODO: If no errors, call addParticipant() and clear fields
+  if (containsErrors == false) {
+    addParticipant();
+    for (let i = 0; i < rsvpInputs.length; i++) {
+      rsvpInputs[i].value = "";
+    }
+  }
+
+}
+
+// Step 3: Replace the form button's event listener with a new one that calls validateForm()
+button.addEventListener("click", validateForm);
+
 /*** Animations [PLACEHOLDER] [ADDED IN UNIT 8] ***/
 /*** Success Modal [PLACEHOLDER] [ADDED IN UNIT 9] ***/
+

@@ -14,6 +14,7 @@ html {
     scroll-behavior: smooth;
 }
 
+/* Margin and padding */
 * {
     margin: 0;
     padding: 0;
@@ -37,14 +38,61 @@ body {
     background-color: var(--bg-color); /* see bottom of file for color variables */
 
     /* Customize the default size, color, and font for text*/
-    font-size: 16px;
     color: var(--text-color);
     font-family: Tahoma, sans-serif; /* This tells the browser: "Try to use `Tahoma`, and if you can't find it, use any sans-serif font." */
 
-    /* Put space around the edges of the webpage */
-    padding: 50px;
-    margin: 0;
+
 }
+
+
+/*** Navigation bar (navbar) ***
+  
+  Purpose:
+  - Add style rules for your website's navbar
+
+  When To Modify:
+  - [ ] Project 4 (REQUIRED FEATURE) 
+  - [ ] Any time after
+***/
+
+nav {
+    margin-bottom: 3rem;
+}
+.navbar .hamburger-menu {
+    display: none;
+}
+
+
+.navbar ul {
+    z-index: 1000; /* Ensures the navbar is on top of other elements */
+    list-style-type: none;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin-bottom: 3rem;
+    background-color: #FF8C36;
+}
+
+.navbar ul li {
+    float: left;
+    margin: 0 0.4rem 0.2rem 0;
+    padding: 0.4rem
+}
+
+.navbar ul li a {
+    display: block;
+    color: white;
+    padding: 0.3rem;
+}
+
+.navbar ul li a:hover {
+   border: 1px white solid;
+   text-decoration: none;
+   box-shadow: 0 0 2px white, 0 0 4px white;
+}
+
 
 /*** Text ***
   
@@ -56,6 +104,7 @@ body {
   - [X] Project 3 (REQUIRED FEATURE) 
   - [ ] Any time after
 ***/
+
 
 h1 {
     text-align: center;
@@ -87,17 +136,16 @@ h2 {
   - [ ] Any time after
 ***/
 
+
+
 .header-container { /* Example A: This styles elements with class="header" */
     display: flex;
     flex-direction: column;
     padding-top: 1.5rem;
-    margin-bottom: 3rem;
-    margin-top: 2rem;
+    margin-bottom: 1.3rem;
+    margin-top: 1.5rem;
     text-align: center;
 }
-
-
-
 
 #header-img {
     margin-left: 4rem;
@@ -109,7 +157,7 @@ h2 {
 .button-container {
     display: flex;
     justify-content: center;
-    padding-top: 1.8rem
+    padding-top: 1.8rem;
 }
 
 .header-button {
@@ -129,17 +177,20 @@ h2 {
     text-decoration: underline;
 }
 
-/* CSS code for expectations  */
+/* CSS code for expectations button */
 .expectations-info {
     display: none;
     flex-direction: column;
     align-items: center;
     margin-bottom: 2.3rem;
-    
+}
+
+.expectations-info h3, .expectations-info h4 {
+    margin-bottom: 0.5rem;
 }
 
 
-/* CSS code for primary events */
+/* CSS code for primary events button */
 .primary-events-container {
     display: none;
 }
@@ -154,67 +205,10 @@ h2 {
     justify-content: center;
 }
 
-
-
-/*** footer ***
-  
-  Purpose:
-  - Add style rules for your website's footer section
-
-  When To Modify:
-  - [ ] Project 3 (STRETCH FEATURE) 
-  - [ ] Any time after
-***/
-
-.footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  background-color: orange;
+/* CSS code for the main section */
+main {
+    padding: 0px 40px 50px 40px;
 }
-
-/*** Navigation bar (navbar) ***
-  
-  Purpose:
-  - Add style rules for your website's navbar
-
-  When To Modify:
-  - [ ] Project 4 (REQUIRED FEATURE) 
-  - [ ] Any time after
-***/
-
-.navbar ul {
-    z-index: 1000; /* Ensures the navbar is on top of other elements */
-    list-style-type: none;
-    overflow: hidden;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    margin-bottom: 3rem;
-    background-color: #FF8C36;
-}
-
-.navbar ul li {
-    float: left;
-    margin: 0 0.4rem 0.2rem 0;
-    padding: 0.4rem
-}
-
-.navbar ul li a {
-    display: block;
-    color: white;
-    padding: 0.3rem
-
-}
-
-.navbar ul li a:hover {
-   border: 1px white solid;
-   text-decoration: none;
-   box-shadow: 0 0 2px white, 0 0 4px white;
-}
-
 
 /*** About Section ***
   
@@ -236,7 +230,36 @@ h2 {
 
 .event-description {
     margin-top: 0.8rem;
+    margin-bottom: 1.2rem;
 }
+
+.event-description p {
+    margin-bottom: 0.4rem;
+}
+
+/* Iframe Event to style the video */
+
+.video-wrapper {
+    display: flex;
+    justify-content: center;
+}
+
+.video-container {
+    position: relative;
+    width: 75%;
+    aspect-ratio: 16 / 9;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+
+}
+
+
 
 
 /*** Schedule Section ***
@@ -256,7 +279,7 @@ h2 {
 
 .event-container {
     display: grid;
-    grid-template-columns: repeat(3, auto);
+    grid-template-columns: repeat(3, 1fr);
     justify-content: center;
 }
 
@@ -301,6 +324,21 @@ h2 {
     padding-left: 0.8rem;
     padding-right: 0.2rem;
 }
+
+/* Show more button margin */
+#view-button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 0.2rem;
+}
+
+#view-button {
+    padding-top: 0.4rem;
+    margin-bottom: 1.2rem;
+    margin-top: 0.3rem;
+    margin-bottom: 2.2rem;
+}
+
 
 /* Extra Events section: 
     I want to hide 6 of the events and 
@@ -353,15 +391,79 @@ a:active {
 
 
 /*** RSVP Section ***
+
   
   Purpose:
   - Add style rules for your website's RSVP form
+
+
 
   When To Modify:
   - [ ] Project 6 (REQUIRED FEATURE)
   - [ ] Project 7 (REQUIRED FEATURE)
   - [ ] Any time after
 ***/
+
+.form-container {
+    margin-bottom: 3rem;
+}
+
+.form-container h3 {
+    text-align: center;
+    margin-bottom: 0.9rem;
+}
+
+.form-container .form-field {
+    margin-bottom: 1.2rem;   
+}
+
+#rsvp-form {
+    display: flex;
+    align-items:  center;
+    flex-direction: column;
+}
+
+.form-field {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-field input {
+    height: 1.8rem;
+    border-radius: 4px;
+    width: 100%;
+}
+
+
+
+.submit-button {
+    display: flex;
+    justify-content: center;
+}
+
+.submit-button button {
+    background-color: #FF8C36;    /* button color */
+    color: white;               /* text color */
+    border: none;               /* hides the default border */
+    padding: 5px 12px;          /* space between button's text and edge */
+    border-radius: 5px;         /* curved edges instead of square */
+    cursor: pointer;
+    width: clamp(6rem, 56%, 10rem)       
+}
+
+.submit-button button:hover {
+    text-decoration: underline;
+}
+
+.error {
+  border-style: solid;
+  border-width: 2px;
+  border-color: red;
+  background-color: pink;
+
+  /* Set border-color and background */
+}
+
 
 .rsvp-container {
     display: flex;
@@ -379,6 +481,31 @@ a:active {
 .rsvp-participants {
     width: 45%;
     padding-right: 10px;
+}
+
+/*** footer ***
+  
+  Purpose:
+  - Add style rules for your website's footer section
+
+  When To Modify:
+  - [ ] Project 3 (STRETCH FEATURE) 
+  - [ ] Any time after
+***/
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #FF8C36;
+  padding-bottom: 0.5rem;
+}
+
+.footer a {
+    color: white;
+    margin-left: 0.4rem;
+    
 }
 
 
@@ -472,6 +599,7 @@ a:active {
 }
 
 @media (max-width: 700px) {
+
     .button-container {
         display: flex;
         flex-direction: column;
@@ -479,7 +607,7 @@ a:active {
     }
 
     .header-button {
-        width: 60%;
+        width: 70%;
     }
 
     .event-container {
@@ -495,9 +623,10 @@ a:active {
 
 }
 
-@media (max-width: 410px) {
+@media (max-width: 470px) {
     .event-container {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
     }
 }
+

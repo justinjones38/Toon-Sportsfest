@@ -36,300 +36,318 @@
         - [ ] Project 8 (STRETCH FEATURE) 
         - [ ] Any time between / after
         -->
-        <div class="navbar">
-            <ul>
-                <li><a href="#header-container">Home</a></li>
-                <li><a href="#event-info">Event Information</a></li>
-                <li><a href="#event-schedule">Schedule</a></li>
-                <li><a href="#links">Links </a></li>
-                <li><button id="theme-button"><img id="button-symbol" src="./img/dark_mode.png" alt="Light mode"></button> </li>
-            </ul>
-        </div>
+        <header>
+            <nav class="navbar">
+                <div class="hamburger-menu" id="hamburger-menu"><img src="img/hamburger.png" alt="Hamburger Menu"></div>
+                <ul>
+                    <li><a href="#header-container">Home</a></li>
+                    <li><a href="#event-info">Event Information</a></li>
+                    <li><a href="#event-schedule">Schedule</a></li>
+                    <li><a href="#links">Links </a></li>
+                    <li><button id="theme-button"><img id="button-symbol" src="./img/light_mode.png" alt="Light mode"></button> </li>
+                </ul>
+            </nav>
 
+            <!-- headings
 
-        <!-- headings
+            Purpose:
+            - Main header section of the webpage
+            - Contains the title, subtitle, image, and key buttons for the webpage
 
-        Purpose:
-        - Main header section of the webpage
-        - Contains the title, subtitle, image, and key buttons for the webpage
+            When To Modify:
+            - [ ] Project 2 (REQUIRED FEATURE) 
+            - [ ] Project 3 (REQUIRED FEATURE) 
+            - [ ] Project 4 (REQUIRED FEATURE) 
+            - [ ] Any time after
+            -->
+            <div class="header-container" id="header-container">
+                <div id="img-container">
+                    <img id="header-img" alt="logo" src="./img/logo.jpg"/>
+                </div>
+                <div class="header-item">
+                    <h1>Toon Sportsfest</h1>
+                </div>
+                <div class="header-item">
+                    <h3>Sports get a toon-up!</h3>
+                </div>
+                <div class="button-container">
+                    <button id="expectations-button" class="header-button" type="button">Show Expectations</button>
+                    <button id="featured-events" class="header-button" type="button">Show Featured Events</button>
+                </div>
+            </div>            
+        </header>
 
-        When To Modify:
-        - [ ] Project 2 (REQUIRED FEATURE) 
-        - [ ] Project 3 (REQUIRED FEATURE) 
-        - [ ] Project 4 (REQUIRED FEATURE) 
-        - [ ] Any time after
-        -->
-        <div class="header-container" id="header-container">
-            <div id="img-container">
-                <img id="header-img" alt="logo" src="./img/logo.jpg"/>
+        <main>
+            <div class="expectations-info">
+                <h3>What to Expect</h3>
+                <h4>Laugh, Play, Conquer</h4>
+                <ul>
+                    <li> <b>Cartoon-Themes Teams: </b> <i>Compete as squads inspired by cartoon worlds</i></li>
+                    <li> <b>Animated Challenges: </b> <i>Classical sports with a hilarious toon twist</i></li>
+                    <li> <b>Cartoon Carnival Vibes:</b> <i>Expect upbeat music, colors, and energy all day long!</i></li>
+                </ul>
             </div>
-            <div class="header-item">
-                <h1>Toon Sportsfest</h1>
-            </div>
-            <div class="header-item">
-                <h3>Sports get a toon-up!</h3>
-            </div>
-            <div class="button-container">
-                <button id="expectations-button" class="header-button" type="button">Show Expectations</button>
-                <button id="featured-events" class="header-button" type="button">Show Featured Events</button>
-            </div>
-        </div>
-        <div class="expectations-info">
-            <h3>What to Expect</h3>
-            <h4>Tag Line</h4>
-            <ul>
-                <li> <b>Bullet 1:</b> <i>Description</i></li>
-                <li> <b>Bullet 2:</b> <i>Description</i></li>
-                <li> <b>Bullet 3:</b> <i>Description</i></li>
-            </ul>
-        </div>
 
 
-        <div class="primary-events-container">
-            <h3>Featured Events</h3>
-            <div class="primary-events">
+            <div class="primary-events-container">
+                <h3>Featured Events</h3>
+                <div class="primary-events">
+                    <div class="event-item">
+                        <img alt="Basketball" src="./img/basketball.jpeg" />
+                        <h3>Basketball</h3>
+                    </div>
+
+                        
+                    <div class="event-item">
+                        <img alt="Soccer" src="./img/soccer.jpeg" />
+                        <h3>Soccer</h3>
+                    </div>
+
+
+                    <div class="event-item">
+                        <img alt="Tennis" src="./img/tennis.jpeg" />
+                        <h3>Tennis</h3>
+                    </div>
+                </div>
+            </div>        
+
+
+
+            
+            <!-- about
+
+            Purpose:
+            - Section for general info about the event
+            - Contains a video, description, and key points about the event
+
+            When To Modify:
+            - [ ] Project 2 (REQUIRED FEATURE) 
+            - [ ] Project 2 (STRETCH FEATURE) 
+            - [ ] Project 4 (STRETCH FEATURE) 
+            - [ ] Any time between / after
+            --> 
+            <div class="event-info-container">
+                <h2 id="event-info">About the Event</h2>
+
+                <div class="event-description">
+                    <p>
+                        The Toon Sportsfest aims to provide a fun and 
+                        enthralling experience for people who are fan 
+                        of cartoons. We aim allow people a chance to watch 
+                        their amazing sports competition with cartoon characters.
+                    </p>
+                    <p>
+                        The Toon Sportsfest is for people of all ages and wants 
+                        to provide a fun and enjoyable for the whole family with 
+                        your favorite and new cartoon characters. This video explains
+                        the mental health benefits that cartoon brings to young people.
+                    </p>
+                </div>
+                    
+                <div class="video-wrapper">
+                    <div class="video-container">
+                        <iframe  src="https://www.youtube.com/embed/ZWdG7k8d2l0?si=7y-WJmPahxNcdxs4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- schedule
+
+            Purpose:
+            - Section for specific info about the event's schedule
+            - Contains images and descriptions of each activity
+
+            When To Modify:
+            - [ ] Project 2 (REQUIRED FEATURE) 
+            - [ ] Project 4 (STRETCH FEATURE) 
+            - [ ] Any time between / after
+            --> 
+            <h2 id="event-schedule">Event Schedule</h2>
+
+            <div class="event-container">
                 <div class="event-item">
                     <img alt="Basketball" src="./img/basketball.jpeg" />
                     <h3>Basketball</h3>
+                    <p>Come watch toons playing a thrilling game of basketball</p>
                 </div>
 
                     
                 <div class="event-item">
                     <img alt="Soccer" src="./img/soccer.jpeg" />
                     <h3>Soccer</h3>
+                    <p>Enjoy toons engaging in the beautiful game</p>
                 </div>
 
 
                 <div class="event-item">
                     <img alt="Tennis" src="./img/tennis.jpeg" />
                     <h3>Tennis</h3>
+                    <p>Watch toons have fun in a enjoyable tennis match</p>
+                </div>
+                <div class="event-item">
+                    <img alt="Racing" src="./img/racing.png" />
+                    <h3>Race</h3>
+                    <p>Toons are in a fun competition to see who is fastest on track</p>
+                </div>
+
+                    
+                <div class="event-item">
+                    <img alt="Skiing" src="./img/skiing.png" />
+                    <h3>Skiing</h3>
+                    <p>Toons are trying to skii their way to victory</p>
+                </div>
+
+
+                <div class="event-item">
+                    <img alt="Boat Racing" src="./img/boat-race.png" />
+                    <h3>Boat Race</h3>
+                    <p>Toons take to the water to boat race and win</p>
                 </div>
             </div>
-        </div>        
-
-
-
-        
-        <!-- about
-
-        Purpose:
-        - Section for general info about the event
-        - Contains a video, description, and key points about the event
-
-        When To Modify:
-        - [ ] Project 2 (REQUIRED FEATURE) 
-        - [ ] Project 2 (STRETCH FEATURE) 
-        - [ ] Project 4 (STRETCH FEATURE) 
-        - [ ] Any time between / after
-        --> 
-        <div class="event-info-container">
-            <h2 id="event-info">About the Event</h2>
-            <div class="video-container">
-                <iframe width="240" height="135" src="https://www.youtube.com/embed/ZWdG7k8d2l0?si=7y-WJmPahxNcdxs4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-            </div>
-
-            <p class="event-description">The Toon Sportsfest aims to provide a fun and 
-                enthralling experience for people who are fan 
-                of cartoons. We aim allow people a chance to watch 
-                their amazing sports competition with cartoon characters. 
-                The Toon Sportsfest is for people of all ages and wants 
-                to provide a fun and enjoyable for the whole family with 
-                your favorite and new cartoon characters.</p>
-        </div>
-
-
-
-        <!-- schedule
-
-        Purpose:
-        - Section for specific info about the event's schedule
-        - Contains images and descriptions of each activity
-
-        When To Modify:
-        - [ ] Project 2 (REQUIRED FEATURE) 
-        - [ ] Project 4 (STRETCH FEATURE) 
-        - [ ] Any time between / after
-        --> 
-        <h2 id="event-schedule">Event Schedule</h2>
-
-        <div class="event-container">
-            <div class="event-item">
-                <img alt="Basketball" src="./img/basketball.jpeg" />
-                <h3>Basketball</h3>
-                <p>Come watch toons playing a thrilling game of basketball</p>
-            </div>
-
-                
-            <div class="event-item">
-                <img alt="Soccer" src="./img/soccer.jpeg" />
-                <h3>Soccer</h3>
-                <p>Enjoy toons engaging in the beautiful game</p>
-            </div>
-
-
-            <div class="event-item">
-                <img alt="Tennis" src="./img/tennis.jpeg" />
-                <h3>Tennis</h3>
-                <p>Watch toons have fun in a enjoyable tennis match</p>
-            </div>
-            <div class="event-item">
-                <img alt="Racing" src="./img/racing.png" />
-                <h3>Race</h3>
-                <p>Toons are in a fun competition to see who is fastest on track</p>
-            </div>
-
-                
-            <div class="event-item">
-                <img alt="Skiing" src="./img/skiing.png" />
-                <h3>Skiing</h3>
-                <p>Toons are trying to skii their way to victory</p>
-            </div>
-
-
-            <div class="event-item">
-                <img alt="Boat Racing" src="./img/boat-race.png" />
-                <h3>Boat Race</h3>
-                <p>Toons take to the water to boat race and win</p>
-            </div>
-        </div>
-        
-        <div class="event-container" id="extra-events">
-            <div class="event-item">
-                <img alt="Golf" src="./img/golf.png" />
-                <h3>Golf</h3>
-                <p>Concentration is important as toons try to score a hole-in-one </p>
-            </div>
-
-                
-            <div class="event-item">
-                <img alt="Bowling" src="./img/bowling.png" />
-                <h3>Bowling</h3>
-                <p>Toons try to see who bow a strike</p>
-            </div>
-
-
-            <div class="event-item">
-                <img alt="Track and Field" src="./img/track-and-field.png" />
-                <h3>Track and Field</h3>
-                <p>Toons engage in a track-and-field to see who is most athletic</p>
-            </div>
-            <div class="event-item">
-                <img alt="Obstacle Course" src="./img/obstacle-course.png" />
-                <h3>Obstacle Course</h3>
-                <p>Toons put all of their mental and physical skills to the test to see who can finish the obstacle course </p>
-            </div>
-
-                
-            <div class="event-item">
-                <img alt="Playing Music" src="./img/playing-music.png" />
-                <h3>Music</h3>
-                <p>Toons play a variety of different to see who sounds best.</p>
-            </div>
-
-
-            <div class="event-item">
-                <img alt="Chess" src="./img/chess.png" />
-                <h3>Chess</h3>
-                <p>Toons enagge the stategic game of chess</p>
-            </div>
-        </div>
-
-        <div class="button-container">
-            <button class="header-button" id="view-button">View More</button>
-        </div>
-
-
-        
-<!-- rsvp
-
-Purpose:
-- Section for users to sign up for the event
-- Contains a form for users to input their information, 
-and a list of other users who have signed up
-
-When To Modify:
-- [ ] Project 6 (REQUIRED FEATURE) 
-- [ ] Project 6 (STRETCH FEATURE) 
-- [ ] Any time after
---> 
-        <div id="rsvp">
-            <h2>RSVP</h2>
-            <div class="rsvp-container">
-                <div class="rsvp-para">
-                    The toons are getting ready. Make sure that you RSVP, so you can be the first to know
-                    when the toons are in action playing some of your favorite sports.
-                </div>
-                <div class="rsvp-participants">
-                    <p>🎟️ Johnny from Texas has RSVP'd.</p>
-                    <p>🎟️ Billy from California has RSVP'd.</p>
-                    <p>🎟️ Teresa from Missouri has RSVP'd.</p>
-                    <p id="rsvp-count">⭐ 3 people have RSVP'd to this event!</p>
-                </div>
-            </div>
-
-            <!--- Sign RSVP Form --->
-            <div class="form-container">
-                <form id="rsvp-form" title="rsvp-form">
-                    <!-- form inputs go here -->
-                     <div class="form-field">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name">
-                     </div>
-                    <div class="form-field">
-                        <label for="state">State</label>
-                        <input type="text" id="state" name="state">
-                    </div>
-                    <div class="form-field">
-                        <label for="email">Email</label>
-                        <input type="text" id="email" name="email">                        
-                    </div>
-                </form>
-                <!-- Submit button -->
-                <button id="rsvp-button">Submit RSVP</button>
-            </div>      
-        </div>
-
-        <!-- success modal [PLACEHOLDER] [ADDED IN UNIT 9] --> 
-
-        <!-- links
-
-        Purpose:
-        - Links to other resources related to the event
-
-        When To Modify:
-        - [ ] Project 2 (STRETCH FEATURE) 
-        - [ ] Project 4 (STRETCH FEATURE) 
-        - [ ] Any time between / after
-        --> 
-        <h2 id="links">Links</h2>
-
-        <!-- This <a> block is one link.  Copy and paste all 6 lines to create another link. -->
-        <a class="block" href="https://dreamfarmstudios.com/blog/11-benefits-of-animation-for-kids-adults-you-may-not-have-thought-about/?utm_source=chatgpt.com">
-            <article>
-                <h3>Read about the benefits of cartoons to children and adults</h3>
-                <p>This article discusses 11 beenfits of animation to children and adults that are not often discussed </p>
-            </article>
-        </a>
-
-        <a class="block" href="https://www.vice.com/en/article/therapists-explain-how-cartoons-affect-your-mental-health/?utm_source=chatgpt.com">
-            <article>
-                <h3>Mental health benefits of watching cartoons</h3>
-                <p>This article discussed the mental health benefits of watching cartoons such as aiding in stress and problem solving.</p>
-            </article>
-        </a>
-
-        <a class="block" href="https://files.eric.ed.gov/fulltext/EJ1416962.pdf?utm_source=chatgpt.com">
-            <article>
-                <h3>Benefits of cartoons on language learning for English learners</h3>
-                <p>This article discusses how cartoons can aid in learning English for people who are learning English </p>
-            </article>
-        </a>
             
+            <div class="event-container" id="extra-events">
+                <div class="event-item">
+                    <img alt="Golf" src="./img/golf.png" />
+                    <h3>Golf</h3>
+                    <p>Concentration is important as toons try to score a hole-in-one </p>
+                </div>
+
+                    
+                <div class="event-item">
+                    <img alt="Bowling" src="./img/bowling.png" />
+                    <h3>Bowling</h3>
+                    <p>Toons try to see who bow a strike</p>
+                </div>
+
+
+                <div class="event-item">
+                    <img alt="Track and Field" src="./img/track-and-field.png" />
+                    <h3>Track and Field</h3>
+                    <p>Toons engage in a track-and-field to see who is most athletic</p>
+                </div>
+                <div class="event-item">
+                    <img alt="Obstacle Course" src="./img/obstacle-course.png" />
+                    <h3>Obstacle Course</h3>
+                    <p>Toons put all of their mental and physical skills to the test to see who can finish the obstacle course </p>
+                </div>
+
+                    
+                <div class="event-item">
+                    <img alt="Playing Music" src="./img/playing-music.png" />
+                    <h3>Music</h3>
+                    <p>Toons play a variety of different to see who sounds best.</p>
+                </div>
+
+
+                <div class="event-item">
+                    <img alt="Chess" src="./img/chess.png" />
+                    <h3>Chess</h3>
+                    <p>Toons enagge the stategic game of chess</p>
+                </div>
+            </div>
+
+            <div id="view-button-container">
+                <button id="view-button" class="header-button">Show More</button>
+            </div>
+
+
+            
+    <!-- rsvp
+
+    Purpose:
+    - Section for users to sign up for the event
+    - Contains a form for users to input their information, 
+    and a list of other users who have signed up
+
+    When To Modify:
+    - [ ] Project 6 (REQUIRED FEATURE) 
+    - [ ] Project 6 (STRETCH FEATURE) 
+    - [ ] Any time after
+    --> 
+            <div id="rsvp">
+                <h2>RSVP</h2>
+                <div class="rsvp-container">
+                    <div class="rsvp-para">
+                        The toons are getting ready. Make sure that you RSVP, so you can be the first to know
+                        when the toons are in action playing some of your favorite sports.
+                    </div>
+                    <div class="rsvp-participants">
+                        <p>🎟️ Johnny from Texas has RSVP'd.</p>
+                        <p>🎟️ Billy from California has RSVP'd.</p>
+                        <p>🎟️ Teresa from Missouri has RSVP'd.</p>
+                        <p id="rsvp-count">⭐ 3 people have RSVP'd to this event!</p>
+                    </div>
+                </div>
+
+                <!--- Sign RSVP Form --->
+                <div class="form-container">
+                    <h3>Sign Up</h3>
+                    <form id="rsvp-form" title="rsvp-form">
+                        <!-- form inputs go here -->
+                        <div class="form-field">
+                            <label for="name">Name*</label>
+                            <input type="text" id="name" name="name" placeholder="First Name" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="state">State*</label>
+                            <input type="text" id="state" name="state" placeholder="State" required>
+                        </div>
+                        <div class="form-field">
+                            <label for="email">Email*</label>
+                            <input type="text" id="email" name="email" placeholder="Email Address" required>                        
+                        </div>
+                    </form>
+                    <!-- Submit button -->
+                    <div class="submit-button">
+                        <button id="rsvp-button">Submit RSVP</button>
+                    </div>
+                </div>      
+            </div>
+
+            <!-- success modal [PLACEHOLDER] [ADDED IN UNIT 9] --> 
+
+            <!-- links
+
+            Purpose:
+            - Links to other resources related to the event
+
+            When To Modify:
+            - [ ] Project 2 (STRETCH FEATURE) 
+            - [ ] Project 4 (STRETCH FEATURE) 
+            - [ ] Any time between / after
+            --> 
+            <h2 id="links">Links</h2>
+
+            <!-- This <a> block is one link.  Copy and paste all 6 lines to create another link. -->
+            <a class="block" href="https://dreamfarmstudios.com/blog/11-benefits-of-animation-for-kids-adults-you-may-not-have-thought-about/?utm_source=chatgpt.com">
+                <article>
+                    <h3>Read about the benefits of cartoons to children and adults</h3>
+                    <p>This article discusses 11 beenfits of animation to children and adults that are not often discussed </p>
+                </article>
+            </a>
+
+            <a class="block" href="https://www.vice.com/en/article/therapists-explain-how-cartoons-affect-your-mental-health/?utm_source=chatgpt.com">
+                <article>
+                    <h3>Mental health benefits of watching cartoons</h3>
+                    <p>This article discussed the mental health benefits of watching cartoons such as aiding in stress and problem solving.</p>
+                </article>
+            </a>
+
+            <a class="block" href="https://files.eric.ed.gov/fulltext/EJ1416962.pdf?utm_source=chatgpt.com">
+                <article>
+                    <h3>Benefits of cartoons on language learning for English learners</h3>
+                    <p>This article discusses how cartoons can aid in learning English for people who are learning English </p>
+                </article>
+            </a>
+        </main>
+      
         <!-- footer [PLACEHOLDER] [ADDED IN UNIT 3] -->
-        <div class="footer">
-            <a href="#">Learn More</a>
-            <a href="#">Contact our team</a>
-        </div> 
+        <footer class="footer">
+            <a href="#event-info">Learn More</a>
+            <a href="#rsvp-form">RSVP</a>
+        </footer> 
         
         <!-- script [PLACEHOLDER] [ADDED IN UNIT 5] -->
          <script src="index.js"></script>
