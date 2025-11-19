@@ -10,4 +10,11 @@ CSS grid and flexbox to ensure responsiveness.
 
 
 It uses JavaScript for form validation to ensure the user submit valid information. 
-<img width="630" height="714" alt="image" src="https://github.com/user-attachments/assets/25e37a65-93a7-49bc-8525-0c6725f193af" />
+<img width="790" height="901" alt="image" src="https://github.com/user-attachments/assets/5088baab-078d-4b80-ab27-815224ff378d" />
+
+JavaScript is also used to enable a dynamic light mode/dark mode button that changes layout based on user preference.
+<img width="2781" height="1204" alt="image" src="https://github.com/user-attachments/assets/30deba9a-07d7-4d0d-a51f-005f1ab7ecf8" />
+<img width="2780" height="1025" alt="image" src="https://github.com/user-attachments/assets/2e24364f-8dd1-41b2-b7ed-cc48f0695cc3" />
+
+
+
