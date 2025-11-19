@@ -1,20 +1,4 @@
-// Use hamburger menu for responsive design
-// Get hamburger button and list items
-let hamburgerMenu = document.getElementById("hamburger-menu");
-let listItems = document.querySelector(".navbar ul");
-
-//  Show list items
-const showList = () => {
-  if (listItems.style.display === "none") {
-    listItems.style.display = "flex"
-  }
-}
-
-hamburgerMenu.addEventListener("click", showList);
-
-
-
-/*** Dark Mode ***
+/*** DARK MODE ***
   
   Purpose:
   - Use this starter code to add a dark mode feature to your website.
@@ -24,51 +8,109 @@ hamburgerMenu.addEventListener("click", showList);
   - [ ] Any time after
 ***/
 
-// Step 1: Select the theme button
-let themeButton = document.getElementById("theme-button");
-let buttonSymbol = document.getElementById("button-symbol");
-let lightMode = true;
+  // Step 1: Select the theme button
+  let themeButton = document.getElementById("theme-button");
+  let buttonSymbol = document.getElementById("button-symbol");
+  let lightMode = true;
 
-// Step 2: Write the callback function
-const toggleDarkMode = () => {
-    // Write your code here
-    // This section will run whenever the button is clicked
-    document.body.classList.toggle("dark-mode");
-    lightMode = !lightMode;
-    if (lightMode) {
-      buttonSymbol.src = `./img/light_mode.png`;
+  // Step 2: Write the callback function
+  const toggleDarkMode = () => {
+      // Write your code here
+      // This section will run whenever the button is clicked
+      document.body.classList.toggle("dark-mode");
+      lightMode = !lightMode;
+      if (lightMode) {
+        buttonSymbol.src = `./img/light_mode.png`;
+      } else {
+        buttonSymbol.src = `./img/dark_mode.png`;
+      }
+
+
+  }
+  // Step 3: Register a 'click' event listener for the theme button,
+  // and tell it to use toggleDarkMode as its callback function
+  themeButton.addEventListener("click", toggleDarkMode);
+
+
+// REDUCING MOTION / REMOVING SCROLLING ANIMATIONS
+  // Get reduce motion and containers by ID
+  let reduceMotion = document.getElementById("reduce-motion");
+  let revealableContainers = document.querySelectorAll(".revealable");
+  let isMotionOn = true;
+
+  const stopAnimation = () => {
+    if(isMotionOn) {
+      console.log("clicked");
+      document.body.classList.add("no-motion");
+      reduceMotion.textContent = "Enable Motion"
+      revealableContainers.forEach(container => {
+      container.classList.add("active");
+    });
     } else {
-      buttonSymbol.src = `./img/dark_mode.png`;
+      document.body.classList.remove("no-motion");
+      reduceMotion.textContent = "Disable Motion";
+    }
+    isMotionOn = !isMotionOn;
+  }
+
+  reduceMotion.addEventListener("click", stopAnimation);
+
+
+// HAMBURGER MENU FOR Responsive Design
+  // Get hamburger button and list items
+  let hamburgerMenu = document.getElementById("hamburger-menu");
+  let navItems = document.getElementById("navbar-items");
+  let hamburgerImg = document.getElementById("hamburger-img");
+
+  //  Show list items
+  const showList = () => {
+    navItems.classList.toggle("show");
+    if(hamburgerImg.src.includes("hamburger.png")) {
+      hamburgerImg.src = "./img/close.png";
+    } else {
+      hamburgerImg.src = "./img/hamburger.png"
+    }
+  }
+
+  hamburgerMenu.addEventListener("click", showList);
+
+  // Hiding list items after clicking one
+  const hideItemsAfterClick = () => {
+    if (navItems.classList.contains("show")) {
+        navItems.classList.remove("show");
+          if(hamburgerImg.src.includes("hamburger.png")) {
+            hamburgerImg.src = "./img/close.png";
+          } else {
+            hamburgerImg.src = "./img/hamburger.png"
+          }
+          console.log("hide items")
     }
 
-
-}
-
-
-// Step 3: Register a 'click' event listener for the theme button,
-//             and tell it to use toggleDarkMode as its callback function
-themeButton.addEventListener("click", toggleDarkMode);
-
-
-// Handling expectations button
-
-// Step 1: grabbing button and expectation-info 
-let expectationButton = document.getElementById("expectations-button");
-let expectationsInfo = document.getElementsByClassName("expectations-info")[0];
-
-// Step 2: Adding function to enable and disable event expectations
-const showExpectations = () => {
-  if (expectationsInfo.style.display == "none" || expectationsInfo.style.display == "") {
-    expectationsInfo.style.display = "flex";
-    expectationButton.textContent = "Hide Expectations"
-  } else {
-    expectationsInfo.style.display = "none";
-    expectationButton.textContent = "Show Expectations"
   }
-}
 
-// Step 3: Adding event Listener to make expectations appear/disappear
-expectationButton.addEventListener("click", showExpectations);
+  navItems.addEventListener("click", hideItemsAfterClick);
+
+
+
+// HANDLING EXPECTATIONS BUTTON
+
+  // Step 1: grabbing button and expectation-info 
+  let expectationButton = document.getElementById("expectations-button");
+  let expectationsInfo = document.getElementsByClassName("expectations-info")[0];
+
+  // Step 2: Adding function to enable and disable event expectations
+  const showExpectations = () => {
+    if (expectationsInfo.style.display == "none" || expectationsInfo.style.display == "") {
+      expectationsInfo.style.display = "flex";
+      expectationButton.textContent = "Hide Expectations"
+    } else {
+      expectationsInfo.style.display = "none";
+      expectationButton.textContent = "Show Expectations"
+    }
+  }
+
+  // Step 3: Adding event Listener to make expectations appear/disappear
+  expectationButton.addEventListener("click", showExpectations);
 
 
 
@@ -134,15 +176,13 @@ featuredEvents.addEventListener("click", handlePrimaryEvent);
 
 // Step 1: Add your query for the submit RSVP button here
 let button = document.getElementById("rsvp-button");
-let count = 3;
-const addParticipant = () => {
+let count = 8;
+const addParticipant = (person) => {
     // Step 2: Write your code to manipulate the DOM here
-    let name = document.getElementById("name").value;
-    let state = document.getElementById("state").value;
-    let email = document.getElementById("email").value;
+
 
     const p = document.createElement("p");
-    p.textContent = `🎟️ ${name} from ${state} has RSVP'd`;
+    p.textContent = `🎟️ ${person.name} from ${person.state} with ${person.squad} friends has RSVP'd`;
     let rsvpParticipants = document.getElementsByClassName("rsvp-participants")[0];
     rsvpParticipants.appendChild(p);
 
@@ -151,19 +191,15 @@ const addParticipant = () => {
     rsvpCount.remove();
 
     // Updating count
-    count += 1;
+    count = count + 1 + person.squad;
 
     // creating new counter element
     const newRsvpCount = document.createElement('p');
     newRsvpCount.setAttribute("id", "rsvp-count");
-    newRsvpCount.textContent = `⭐ ${count} people have RSVP'd to this event!`;
+    newRsvpCount.textContent = `⭐ ${count} people have RSVP'd to this event and they are watch!`;
 
     // appending to DOM
     rsvpParticipants.appendChild(newRsvpCount);
-
-
-
-    
 }
 
 // Step 3: Add a click event listener to the submit RSVP button here
@@ -187,9 +223,16 @@ const validateForm = () => {
 
   let containsErrors = false;
 
-  var rsvpInputs = document.getElementById("rsvp-form").elements;
+  let rsvpInputs = document.getElementById("rsvp-form").elements;
+  let person = {
+    name: rsvpInputs[0].value,
+    state: rsvpInputs[1].value,
+    email: rsvpInputs[2].value,
+    squad: Number(rsvpInputs[3].value)
+  };
+  console.log(person);
   // TODO: Loop through all inputs
-  for(let i = 0; i < rsvpInputs.length; i++) {
+  for(let i = 0; i < rsvpInputs.length-1; i++) {
     // TODO: Inside loop, validate the value of each input
 
     if (rsvpInputs[i].value.length < 2) {
@@ -211,9 +254,20 @@ const validateForm = () => {
       email.classList.remove("error")
     }
 
+    let squad = document.getElementById("squad");
+    squadNum = Number(squad.value);
+    if(squadNum < 0) {
+        containsErrors = true;
+        squad.classList.add("error");
+        console.log("The number entered is less than 0");
+    } else {
+      squad.classList.remove("error");
+    }
+
   // TODO: If no errors, call addParticipant() and clear fields
   if (containsErrors == false) {
-    addParticipant();
+    addParticipant(person);
+    toggleModal(person);
     for (let i = 0; i < rsvpInputs.length; i++) {
       rsvpInputs[i].value = "";
     }
@@ -224,6 +278,107 @@ const validateForm = () => {
 // Step 3: Replace the form button's event listener with a new one that calls validateForm()
 button.addEventListener("click", validateForm);
 
-/*** Animations [PLACEHOLDER] [ADDED IN UNIT 8] ***/
-/*** Success Modal [PLACEHOLDER] [ADDED IN UNIT 9] ***/
+// ADDING STATES TO SELECT FORM
+  // An array of states
+  let states = ['Alabama','Alaska','Arizona','Arkansas','California','Colorado','Connecticut','Delaware','Florida','Georgia','Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky','Louisiana','Maine','Maryland','Massachusetts','Michigan','Minnesota','Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire','New Jersey','New Mexico','New York','North Carolina','North Dakota','Ohio','Oklahoma','Oregon','Pennsylvania','Rhode Island','South Carolina','South Dakota','Tennessee','Texas','Utah','Vermont','Virginia','Washington','West Virginia','Wisconsin','Wyoming'];
 
+  let stateList = document.getElementById("state")
+
+  const listOfStates = states.forEach(item => {
+    state.innerHTML += `<option value=${item}>${item} </option>`;
+  })
+
+
+
+
+
+/*** Scroll Animations ***
+  
+  Purpose:
+  - Use this starter code to add scroll animations to your website.
+
+  When To Modify:
+  - [ ] Project 8 (REQUIRED FEATURE)
+  - [ ] Any time after
+***/
+
+
+
+// Step 2: Write function to reveal elements when they are in view.
+const reveal = () => {
+  if(document.body.classList.contains("no-motion")) return;
+    for (let i = 0; i < revealableContainers.length; i++) {
+        let current = revealableContainers[i];
+
+        // Get current height of container and window
+        let windowHeight = window.innerHeight;
+        let topOfRevealableContainer = revealableContainers[i].getBoundingClientRect().top;
+        let revealDistance = parseInt(getComputedStyle(current).getPropertyValue('--reveal-distance'), 10);
+
+        // If the container is within range, add the 'active' class to reveal
+        if (topOfRevealableContainer < windowHeight - revealDistance) {
+            revealableContainers[i].classList.add("active");
+        }
+        // If the container is not within range, hide it by removing the 'active' class
+        else { 
+            revealableContainers[i].classList.remove("active");
+        }
+    }
+}
+
+// Step 3: Whenever the user scrolls, check if any containers should be revealed
+window.addEventListener("scroll", reveal);
+
+document.addEventListener("DOMContentLoaded", () => {
+  reveal();
+})
+/*** Modal ***
+  
+  Purpose:
+  - Use this starter code to add a pop-up modal to your website.
+
+  When To Modify:
+  - [ ] Project 9 (REQUIRED FEATURE)
+  - [ ] Project 9 (STRETCH FEATURE)
+  - [ ] Any time after
+***/
+
+const toggleModal = (person) => {
+    let modal = document.getElementsByClassName("modal")[0]; // TODO
+    let modalContent = document.getElementById("modal-text");
+    // TODO: Update modal display to flex
+    modal.style.display = "flex";
+
+    // TODO: Update modal text to personalized message
+    modalContent.textContent = `Thank's for RSVPing, ${person.name}! We can't wait to see you at the event!`;
+    let intervalId =  setInterval(animateImage, 500);
+    // Set modal timeout to 5 seconds
+    setTimeout(() => {
+        // TODO: Update modal display to none
+        modal.style.display = "none";
+        clearInterval(intervalId);
+    }, 5000);
+        
+}
+
+// TODO: animation variables and animateImage() function
+let rotateFactor = 0;
+let modalImage = document.getElementById("modal-img");
+
+const animateImage = () => {
+  if (rotateFactor === 0) {
+      rotateFactor = 10;
+  } else {
+    rotateFactor = 0;
+  }
+  modalImage.style.transform = `rotate(${rotateFactor}deg)`;
+}
+
+let closeModuleButton = document.getElementById("close-module-button");
+
+const closeModule = () => {
+  let modal = document.querySelector(".modal");
+  modal.style.display = "none";
+}
+
+closeModuleButton.addEventListener("click", closeModule);

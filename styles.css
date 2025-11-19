@@ -10,7 +10,7 @@
 ***/
 html {
     background-color: var(--bg-color);
-    scroll-padding-top: 100px;
+    scroll-padding-top: 50px;
     scroll-behavior: smooth;
 }
 
@@ -40,8 +40,11 @@ body {
     /* Customize the default size, color, and font for text*/
     color: var(--text-color);
     font-family: Tahoma, sans-serif; /* This tells the browser: "Try to use `Tahoma`, and if you can't find it, use any sans-serif font." */
+}
 
-
+.no-motion * {
+    animation: none !important;
+    transform: none !important;
 }
 
 
@@ -56,42 +59,83 @@ body {
 ***/
 
 nav {
-    margin-bottom: 3rem;
-}
-.navbar .hamburger-menu {
-    display: none;
-}
-
-
-.navbar ul {
     z-index: 1000; /* Ensures the navbar is on top of other elements */
-    list-style-type: none;
-    overflow: hidden;
+    background-color: #FF8C36;
+    min-height: 50px;
     position: fixed;
+    width: 100%;
     top: 0;
     left: 0;
-    width: 100%;
-    margin-bottom: 3rem;
-    background-color: #FF8C36;
+}
+.navbar #hamburger-menu {
+    display: none;
+    
+}
+
+#navbar-items {
+    display: flex;
+}
+
+.navbar ul {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    list-style-type: none;
+    gap: 0.2rem;
+    padding: 0;
+    margin: 0;
 }
 
 .navbar ul li {
-    float: left;
-    margin: 0 0.4rem 0.2rem 0;
-    padding: 0.4rem
+    margin: 0;
+    margin-right: 0.4rem;
+    margin-bottom: 0.3rem;
+    padding: 0rem;
+    height: 50px;
 }
 
 .navbar ul li a {
-    display: block;
+    display: flex;
+    align-items: center;
     color: white;
-    padding: 0.3rem;
+    padding: 0.4rem;
+    height: 100%;
+    font-size: 1rem;
+    margin-left: 0.4rem;
 }
 
-.navbar ul li a:hover {
-   border: 1px white solid;
-   text-decoration: none;
-   box-shadow: 0 0 2px white, 0 0 4px white;
+.navbar ul li button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    background: #E67624;
+    height: 100%;
+    padding: 0 0.5rem;
+    font-size: 1rem;
+    border: none;
+    margin-top: 2px;
+    border-radius: 12px;
+
+
 }
+
+.navbar ul li button:hover {
+   text-decoration: underline;
+   cursor: pointer;
+}
+
+
+
+.navbar ul li a:hover {
+   border: 1.4px white solid;
+   text-decoration: none;
+   box-shadow: 0 0 2px white, 0 0 5px white;
+}
+
+
+
+
 
 
 /*** Text ***
@@ -106,7 +150,7 @@ nav {
 ***/
 
 
-h1 {
+.header-container h1 {
     text-align: center;
     font-size: clamp(3.5rem, 60%, 5rem);
     font-family: "Luckiest Guy","Impact";
@@ -118,7 +162,7 @@ h2 {
 
 .header-container h3 {
     color: blue;
-    font-family: 'Quicksand", "Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: "Quicksand", "Trebuchet MS", 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: clamp(1.8rem, 70%, 2.5rem);
     font-weight: 1000;
     text-align: center;
@@ -141,10 +185,12 @@ h2 {
 .header-container { /* Example A: This styles elements with class="header" */
     display: flex;
     flex-direction: column;
-    padding-top: 1.5rem;
+    padding-top: 2.5rem;
+    margin-top: 50px;
     margin-bottom: 1.3rem;
-    margin-top: 1.5rem;
     text-align: center;
+    padding-left: 40px;
+    padding-right: 40px;
 }
 
 #header-img {
@@ -154,9 +200,10 @@ h2 {
     max-width: 100%;
 }
 
+/* The button container for the header-button and show-more button */
 .button-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     padding-top: 1.8rem;
 }
 
@@ -170,6 +217,8 @@ h2 {
     cursor: pointer;            /* makes the cursor change when over button */
     margin: 0.6rem;
     font-size: clamp(1.5rem, 40%, 2.8rem);
+    height: clamp(2.3rem, 10vh, 4.4rem);
+    width: clamp(20.4rem, 40vw, 28.2rem);
 }
 
 .header-button:hover {
@@ -182,17 +231,31 @@ h2 {
     display: none;
     flex-direction: column;
     align-items: center;
-    margin-bottom: 2.3rem;
+    margin-bottom: 0.8rem;
 }
 
-.expectations-info h3, .expectations-info h4 {
-    margin-bottom: 0.5rem;
+.expectations-info h3,  .primary-events-container h3 {
+    margin-bottom: 0.7rem;
+    font-size: clamp(1.5rem, 30%, 2.2rem);
 }
 
+.expectations-info h4 {
+    margin-bottom: 0.7rem;
+    font-size: clamp(1.1rem, 23%, 1.6rem);
+}
+
+.expectations-info li {
+    margin-bottom: 0.4rem;
+}
+
+.expectations-info li b, .expectations-info li i {
+    font-size: clamp(1.0rem, 20%, 1.5rem);
+}
 
 /* CSS code for primary events button */
 .primary-events-container {
     display: none;
+    margin-top: 1.5rem;
 }
 
 .primary-events-container h3 {
@@ -204,6 +267,7 @@ h2 {
     flex-wrap: nowrap;
     justify-content: center;
 }
+
 
 /* CSS code for the main section */
 main {
@@ -293,7 +357,7 @@ main {
     background-color: #F7F7F7;
     box-shadow: 0 0 10px #FF5F1F;
     margin: 1.5rem;
-    min-width: 10rem;
+    min-width: 12rem;
     height: auto;
     transition: scale 1s ease-in-out;
     overflow: hidden;
@@ -404,6 +468,12 @@ a:active {
   - [ ] Any time after
 ***/
 
+.form-heading {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
 .form-container {
     margin-bottom: 3rem;
 }
@@ -426,14 +496,16 @@ a:active {
 .form-field {
     display: flex;
     flex-direction: column;
+    width: 14rem;
 }
 
-.form-field input {
-    height: 1.8rem;
+.form-field input, .form-field select {
+    height: 2.2rem;
     border-radius: 4px;
     width: 100%;
+    border: 2px black solid;
+    font-size: 1.1rem;
 }
-
 
 
 .submit-button {
@@ -448,7 +520,9 @@ a:active {
     padding: 5px 12px;          /* space between button's text and edge */
     border-radius: 5px;         /* curved edges instead of square */
     cursor: pointer;
-    width: clamp(6rem, 56%, 10rem)       
+    font-size: clamp(1.1rem, 40%, 1.7rem);
+    width: clamp(10rem, 56%, 13rem);
+    height: 2.2rem;      
 }
 
 .submit-button button:hover {
@@ -511,8 +585,110 @@ a:active {
 
 /* Add other rsvp-related selectors here */
 
-/*** Animations [PLACEHOLDER] [ADDED IN UNIT 8] ***/
-/*** Success Modal [PLACEHOLDER] [ADDED IN UNIT 9] ***/
+
+/*** Animations  ***
+  
+  Purpose:
+  - Add style rules to enable scroll animations for your website
+
+  When To Modify:
+  - [ ] Project 8 (REQUIRED FEATURE)
+  - [ ] Any time after
+***/
+
+.revealable {
+  --reveal-distance: 150px; /* CSS Variable */
+
+  scroll-margin-top: var(--reveal-distance);
+  opacity: 0;
+  transition: all 2s ease;
+  position: relative;
+  transform: translateY(var(--reveal-distance));
+}
+
+.active {
+  scroll-margin-top: 0;
+  transform: translateY(0);
+  opacity: 1.0;
+}
+
+/*** Success Modal  ***
+  
+  Purpose:
+  - Add style rules to your website's pop-up modal, which appears
+    when a user successfully submits the RSVP form
+
+  When To Modify:
+  - [ ] Project 9 (REQUIRED FEATURE)
+  - [ ] Any time after
+***/
+
+.modal {
+  display: none;   /* modal should be hidden by default*/
+  position: fixed; /* modal cannot move around the screen */
+  z-index: 2;      /* modal appears above other elements */ 
+  
+  /* TODO: Make the modal fill the entire screen */
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+
+  /* Add a semi-transparent background to shadow non-modal elements*/
+  background-color: rgba(0,0,0,0.5); /* 40% opacity black */
+
+  /* Flexbox settings for modal */
+  /* These won't apply until we update "display:" from "hidden" to "flex" in our JS */
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-container {
+    /* Change modal size and spacing here */
+    width: 50%;
+    height: 50%;
+
+    /* Customize modal style here */
+    background-color: white;
+    border: 1px solid #FF8C36;
+    box-shadow: 0 0 3px #FF8C36, 0 0 6px #FF8C36;
+    color: black;
+    text-align: center;
+    font-size: 1.3rem;
+    font-family: monospace;
+
+    /* Optional: Use flexbox to customize .modal-item layout */
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+
+}
+.close-button {
+    align-self: flex-end;
+}
+
+.close-button:hover {
+    cursor: pointer;
+}
+
+.modal-item {
+    display: flex;
+    justify-content: center;
+    padding-right: 30px;
+    padding-left: 30px
+}
+
+.modal-item p {
+    margin-bottom: 1.4rem;
+    font-size: clamp(1.3rem, 30%, 1.7rem);
+}
+
+.modal-item img {
+    /* Optional: Style individual elements within the modal */
+    width: clamp(6rem, 40%, 20rem)
+}
+
 
 /* Default dark mode style */
 
@@ -583,7 +759,7 @@ a:active {
     --text-color: #231942;
 
     /* Dark Mode */
-    --bg-color-dark-mode: 1E1E1E;
+    --bg-color-dark-mode: #1E1E1E;
     --text-color-dark-mode: #fff;
 
     /* Accent Colors */
@@ -623,10 +799,83 @@ a:active {
 
 }
 
-@media (max-width: 470px) {
+@media (max-width: 580px) {
+    /* Navbar  */
+    /* Hiding navbar  */
+    .navbar #hamburger-menu {
+        display: block;
+        position: fixed;
+        right: 8px;
+        top: 8px;
+    }
+
+    #navbar-items {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        z-index: 1001;
+        position: absolute;
+        top: 3rem;
+        background-color: #FF8C36;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #navbar-items.show {
+        display: flex;
+        max-height: 300px;
+    }
+
+    #navbar-items li, #navbar-items button {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+    }
+
+    #navbar-items.show a {
+        display: block;
+        padding: 0.8rem;
+        text-align: center;
+        color: white;   
+    }
+
+
+
+    .navbar #hamburger-menu:hover {
+        cursor: pointer;
+    } 
+}
+ 
+@media (max-width: 440px) {
     .event-container {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
     }
+    html {
+        font-size: 12px;
+    }
 }
 
+@media (max-width: 330px) {
+        /* Changing text font */
+    html {
+        font-size: 10px;
+    }
+    main {
+        padding: 20px;
+    }
+
+    .rsvp-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+}
+
+@media (max-width: 290px) {
+    html {
+        font-size: 8px;
+    }
+}
