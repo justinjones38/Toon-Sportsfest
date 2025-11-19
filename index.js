@@ -256,7 +256,7 @@ const validateForm = () => {
 
     let squad = document.getElementById("squad");
     squadNum = Number(squad.value);
-    if(squadNum < 0) {
+    if(squadNum < 0 || !squadNum) {
         containsErrors = true;
         squad.classList.add("error");
         console.log("The number entered is less than 0");

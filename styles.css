@@ -10,8 +10,8 @@
 ***/
 html {
     background-color: var(--bg-color);
-    scroll-padding-top: 50px;
     scroll-behavior: smooth;
+    scroll-padding-top: 60px;
 }
 
 /* Margin and padding */
@@ -36,7 +36,7 @@ html {
 body {
     /* Add a background color or image */
     background-color: var(--bg-color); /* see bottom of file for color variables */
-
+    padding-top: 50px;
     /* Customize the default size, color, and font for text*/
     color: var(--text-color);
     font-family: Tahoma, sans-serif; /* This tells the browser: "Try to use `Tahoma`, and if you can't find it, use any sans-serif font." */
@@ -186,7 +186,6 @@ h2 {
     display: flex;
     flex-direction: column;
     padding-top: 2.5rem;
-    margin-top: 50px;
     margin-bottom: 1.3rem;
     text-align: center;
     padding-left: 40px;
@@ -377,7 +376,7 @@ main {
 }
 
 .event-item h3 {
-    margin-top: 1.0rem;
+    margin-top: 0.5rem;
     text-align: center;
     color: black;
 } 
@@ -385,8 +384,8 @@ main {
 .event-item p {
     width: 100%;
     color: black;
-    padding-left: 0.8rem;
-    padding-right: 0.2rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
 }
 
 /* Show more button margin */
@@ -597,17 +596,19 @@ a:active {
 ***/
 
 .revealable {
-  --reveal-distance: 150px; /* CSS Variable */
+  --reveal-distance: 50px; /* CSS Variable */
 
   scroll-margin-top: var(--reveal-distance);
   opacity: 0;
-  transition: all 2s ease;
+  transition: all 2.5s ease;
   position: relative;
+}
+.revealable:not(.active) {
   transform: translateY(var(--reveal-distance));
 }
 
 .active {
-  scroll-margin-top: 0;
+  scroll-margin-top: 0px;
   transform: translateY(0);
   opacity: 1.0;
 }
@@ -646,8 +647,11 @@ a:active {
 
 .modal-container {
     /* Change modal size and spacing here */
-    width: 50%;
-    height: 50%;
+    width: 70%;
+    height: 60%;
+    min-width: 200px;
+    min-height: 100px;
+
 
     /* Customize modal style here */
     background-color: white;
