@@ -39,4 +39,4 @@ To run the project.
 2. open "index.html"
 
 Acknowledgements
-Thanks! To WEB101 and CodePath for the amazing course!
+- Thanks! To WEB101 and CodePath for the amazing course!
