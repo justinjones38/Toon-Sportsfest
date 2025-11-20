@@ -739,11 +739,6 @@ a:active {
 .dark-mode .block article h3, .dark-mode .block article p {
     color: white;
 }
-/* Example: Different dark mode style for visited links */
-.dark-mode a:visited * {
-
-}
-
 
 
 /*** Custom Colors (OPTIONAL) ***
