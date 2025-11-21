@@ -3,7 +3,7 @@ A colorful, cartoon-themed event website built for CodePath WEB101. This project
 
 Video Demo 
 <video controls width="640">
-  <source src="Toon-Sportsfest.mp4" type="video/mp4">
+  <source src="Toon-Sportsfest.H264" type="video/mp4">
   Your browser does not support the video tag.
 </video>
 
