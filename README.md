@@ -2,7 +2,7 @@
 A colorful, cartoon-themed event website built for CodePath WEB101. This project focuses on responsive design, accessibility, and user interaction through dynamic JavaScript features.>
 
 Video Demo 
-<video src="Toon-Sportsfest.mp4" controls width="300">
+<video src="Toon-Sportsfest.mp4" controls width="300"></video>
 
 Responsive Design
 - Built Using CSS Grid and Flexbox
