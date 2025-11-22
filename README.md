@@ -1,17 +1,18 @@
 # Toon-Sportsfest
 A colorful, cartoon-themed event website built for CodePath WEB101. This project focuses on responsive design, accessibility, and user interaction through dynamic JavaScript features.
 
+Responsive Design
 - Built Using CSS Grid and Flexbox
 - Desktop view includes a full navigation bar; mobile view automatically switches to a hamburger menu.
-
-
 - CSS grid (used for all cards) and flexbox (used for featured cards) to ensure responsiveness of cards.
 - Ensures smooth responsiveness on smaller screens
 
 
+Form validation
 - It uses JavaScript for form validation to ensure the user submit valid information.
 - Provides real-time feedback
 
+Accessible
 - Custom theme used by JavaScript.
 - Styling is automatically updated for better user experience.
 
